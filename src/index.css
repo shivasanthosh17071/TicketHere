@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 3%;
+    --foreground: 240 10% 96%;
+    --card: 240 15% 7%;
+    --card-foreground: 240 10% 96%;
+    --popover: 240 15% 7%;
+    --popover-foreground: 240 10% 96%;
+    --primary: 350 82% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 12% 10%;
+    --secondary-foreground: 240 10% 96%;
+    --muted: 240 12% 10%;
+    --muted-foreground: 240 10% 50%;
+    --accent: 46 92% 53%;
+    --accent-foreground: 240 20% 3%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 10% 17%;
+    --input: 240 10% 17%;
+    --ring: 350 82% 51%;
+    --radius: 0.75rem;
+    --success: 142 71% 45%;
+
+    --cinema-bg: 240 20% 3%;
+    --cinema-card: 240 15% 7%;
+    --cinema-elevated: 240 12% 11%;
+    --cinema-red: 350 82% 51%;
+    --cinema-gold: 46 92% 53%;
+    --cinema-muted: 240 10% 46%;
+    --cinema-border: 240 11% 17%;
+    --cinema-success: 142 71% 45%;
+
+    --sidebar-background: 240 15% 5%;
+    --sidebar-foreground: 240 10% 96%;
+    --sidebar-primary: 350 82% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 12% 10%;
+    --sidebar-accent-foreground: 240 10% 96%;
+    --sidebar-border: 240 10% 17%;
+    --sidebar-ring: 350 82% 51%;
+  }
+
+  .light {
+    --background: 0 0% 97%;
+    --foreground: 240 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+    --primary: 350 82% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 94%;
+    --secondary-foreground: 240 10% 10%;
+    --muted: 240 5% 94%;
+    --muted-foreground: 240 5% 40%;
+    --accent: 46 92% 48%;
+    --accent-foreground: 240 20% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 88%;
+    --input: 240 6% 88%;
+    --ring: 350 82% 51%;
+
+    --cinema-bg: 0 0% 97%;
+    --cinema-card: 0 0% 100%;
+    --cinema-elevated: 240 5% 95%;
+    --cinema-red: 350 82% 51%;
+    --cinema-gold: 46 92% 43%;
+    --cinema-muted: 240 5% 46%;
+    --cinema-border: 240 6% 88%;
+    --cinema-success: 142 71% 45%;
+
+    --sidebar-background: 0 0% 99%;
+    --sidebar-foreground: 240 10% 10%;
+    --sidebar-primary: 350 82% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 94%;
+    --sidebar-accent-foreground: 240 10% 10%;
+    --sidebar-border: 240 6% 88%;
+    --sidebar-ring: 350 82% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', cursive;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .ticket-edge {
+    background-image: radial-gradient(circle, hsl(var(--cinema-bg)) 6px, transparent 6px);
+    background-size: 20px 20px;
+    background-position: -10px center;
+    height: 20px;
+  }
+}
+
+@keyframes letter-fade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes check-stroke {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px hsla(var(--cinema-red), 0.3); }
+  50% { box-shadow: 0 0 24px hsla(var(--cinema-red), 0.6); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
